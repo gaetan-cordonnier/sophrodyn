@@ -9,11 +9,22 @@ export const Container = styled.div`
 	text-transform: uppercase;
 	background: linear-gradient(#30bccd, #01596b);
 	width: 100vw;
-	min-height: 140vh;
+	min-height: 100vh;
 	color: #fff;
+`;
+
+export const Header = styled.div`
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	height: 15vh;
+	width: 70vw;
+	margin-top: 5vh;
+	margin-bottom: 10vh;
 
 	.avatar {
-		height: 100px;
+		height: 100%;
 		width: auto;
 		margin-top: 5vh;
 		margin-bottom: 5vh;
@@ -23,9 +34,16 @@ export const Container = styled.div`
 		}
 	}
 
-	h2 {
-		font-size: 2em;
-		margin-bottom: 3vh;
+	.person {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		height: 100%;
+		width: 55vw;
+		text-align: left;
+		font-size: 1.2em;
+		color: #fff;
+		padding-left: 5vw;
 	}
 `;
 
