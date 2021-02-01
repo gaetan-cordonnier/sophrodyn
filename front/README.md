@@ -1,8 +1,24 @@
-# Getting Started with Create React App
+# SOPHRODYN Mobile Application
+
+- Contact: gaetan.cordonnier@gmail.com
+- Linkedin: https://www.linkedin.com/in/gaetancordonnier/
+- Github: https://github.com/gaetan-cordonnier
+
+## 01/29/21 Repo for App Sophrodyn Created
+
+This App as build with React and modules: /br
+
+- react-router-dom
+- styled-components
+- styled-reset
+- axios
+- redux
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
