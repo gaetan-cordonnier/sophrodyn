@@ -13,9 +13,9 @@ router.get("/protected", passport.authenticate("jwt"), (req, res) => {
 	res.status(200).send(msg);
 });
 
-// Login
+// Signin
 
-router.post("/login", passport.authenticate("local"), (req, res) => {
+router.post("/signin", passport.authenticate("local"), (req, res) => {
 	const token = jwt.sign(req.user, jwt_secret);
 	res.status(200).json(token);
 });

@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
 
 router.get("/test", async (req, res) => {
 	try {
-		const [sqlRes] = await db.execute(`SELECT * FROM users`);
+		const [sqlRes] = await db.execute(`SELECT * FROM user`);
 		res.status(200).json(sqlRes);
 	} catch (e) {
 		res.status(500).json(e);
@@ -33,11 +33,11 @@ router.post("/signup", async (req, res) => {
 	try {
 		const formData = req.body;
 		formData.password = bcrypt.hashSync(formData.password, jwt_rounds);
-		const [sqlRes] = await db.query(`INSERT INTO users SET ?`, formData);
+		const [sqlRes] = await db.query(`INSERT INTO user SET ?`, formData);
 		delete formData.password;
 		formData.id = sqlRes.insertId;
 		const token = jwt.sign(formData, jwt_secret);
-		res.status(201).json(token);
+		res.status(201).json({ user: formData, token });
 	} catch (e) {
 		console.log(e);
 		res.status(500).json(e);
