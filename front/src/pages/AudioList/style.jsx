@@ -38,4 +38,11 @@ export const Container = styled.div`
 		margin-top: 3vh;
 		margin-bottom: 2vh;
 	}
+
+	li {
+		font-size: 1.5em;
+		list-style: none;
+		text-decoration: none;
+		color: #fff;
+	}
 `;

@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { Container, FormContainer, Case } from "./style";
 
@@ -64,6 +65,9 @@ const Profile = () => {
 				></input>
 				<button type="submit">Modifier</button>
 			</FormContainer>
+			<Link to="/home">
+				<li>Accueil</li>
+			</Link>
 		</Container>
 	);
 };

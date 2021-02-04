@@ -13,6 +13,13 @@ export const Container = styled.div`
 	color: #fff;
 	padding-top: 3vh;
 	padding-bottom: 5vh;
+
+	li {
+		font-size: 1.5em;
+		list-style: none;
+		text-decoration: none;
+		color: #fff;
+	}
 `;
 
 export const FormContainer = styled.form`

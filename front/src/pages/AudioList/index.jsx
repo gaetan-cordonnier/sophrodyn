@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container } from "./style";
 
 const AudioList = () => {
@@ -42,6 +43,9 @@ const AudioList = () => {
 					<code>audio</code> element.
 				</audio>
 			</figure>
+			<Link to="/home">
+				<li>Accueil</li>
+			</Link>
 		</Container>
 	);
 };
