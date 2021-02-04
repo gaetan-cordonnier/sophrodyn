@@ -4,29 +4,39 @@ export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: flex-start;
 	font-family: "Open Sans Condensed", sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 0.5rem;
 	background: linear-gradient(#30bccd, #01596b);
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	color: #fff;
+	padding-bottom: 3vh;
 
-	h1 {
-		margin-bottom: 10vh;
-		font-size: 3em;
-		border: 1px solid #fff;
-		padding: 0.75rem 2rem;
+	figure {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
 	}
 
 	h2 {
-		font-size: 2em;
+		margin-top: 2vh;
+		margin-bottom: 5vh;
+		font-size: 1em;
+		border: 1px solid #fff;
+		padding: 0.5rem 1.5rem;
 	}
 
-	span {
-		font-size: 1em;
-		margin-bottom: 30vh;
+	h3 {
+		font-size: 0.75em;
+		padding-top: 3vh;
+	}
+
+	audio {
+		margin-top: 3vh;
+		margin-bottom: 2vh;
 	}
 
 	li {
