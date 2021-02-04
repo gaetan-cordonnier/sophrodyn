@@ -1,8 +1,12 @@
 const initialState = {
 	id: "",
-	mail: "",
+	email: "",
 	firstname: "",
 	lastname: "",
+	birthday: "",
+	genre: "",
+	height: "",
+	weight: "",
 };
 
 export const user = (state = initialState, action) => {
