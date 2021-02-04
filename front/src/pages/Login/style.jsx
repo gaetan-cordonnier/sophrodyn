@@ -11,8 +11,22 @@ export const Container = styled.div`
 	width: 100vw;
 	min-height: 100vh;
 	color: #fff;
-	padding-top: 3vh;
-	padding-bottom: 5vh;
+	padding-bottom: 4vh;
+
+	h1 {
+		text-transform: uppercase;
+		letter-spacing: 0.5rem;
+		margin-top: 6vh;
+		margin-bottom: 10vh;
+		font-size: 2.5em;
+		border: 1px solid #fff;
+		padding: 0.75rem 2rem;
+	}
+
+	h2 {
+		font-size: 2em;
+		margin-bottom: 3vh;
+	}
 `;
 
 export const FormContainer = styled.form`
@@ -21,16 +35,9 @@ export const FormContainer = styled.form`
 	align-items: center;
 	justify-content: flex-start;
 	width: 90vw;
-	min-height: 80vh;
+	min-height: 100%;
 	font-size: 1.2em;
 	color: #fff;
-
-	.avatar {
-		height: 100%;
-		width: auto;
-		margin-bottom: 5vh;
-		border-radius: 50%;
-	}
 
 	label {
 		height: 4vh;
@@ -40,7 +47,7 @@ export const FormContainer = styled.form`
 	}
 
 	input {
-		height: 4vh;
+		height: 50px;
 		width: 80%;
 		font-size: 1.2em;
 		background-color: transparent;
@@ -50,7 +57,49 @@ export const FormContainer = styled.form`
 		padding-left: 10px;
 		box-sizing: border-box;
 		outline: none;
-		margin-bottom: 3vh;
+		background-size: 1.2em;
+		background-position: 0px 12px;
+		background-repeat: no-repeat;
+		margin-bottom: 2vh;
+
+		&.email {
+			padding-left: 35px;
+			background-image: url("/images/arobase.svg");
+		}
+
+		&.password {
+			margin-top: 3vh;
+			padding-left: 35px;
+			background-image: url("/images/lock.svg");
+		}
+
+		&.passwordBis {
+			padding-left: 35px;
+			background-image: url("/images/lock.svg");
+		}
+	}
+
+	button {
+		font-size: 1.1em;
+		height: 15%;
+		width: 80%;
+		border: none;
+		color: #fff;
+		background: linear-gradient(#86d87b, #42ce30);
+		margin-bottom: 1.5vh;
+		border-radius: 3px;
+
+		&.signup {
+			margin-top: 3vh;
+			background: linear-gradient(#977bd8, #7850d6);
+		}
+	}
+
+	label {
+		height: 4vh;
+		width: 80%;
+		font-size: 1em;
+		text-align: left;
 	}
 
 	select {
@@ -83,23 +132,25 @@ export const FormContainer = styled.form`
 		border-radius: 3px;
 	}
 
+	span {
+		font-size: 1em;
+		color: #fff;
+	}
+
 	a {
 		font-size: 1em;
 		text-transform: none;
 		color: #fff;
 	}
-`;
 
-export const Case = styled.form`
-	height: 4vh;
-	width: 80%;
-	font-size: 1.2em;
-	background-color: transparent;
-	border: none;
-	border-bottom: 1px solid #fff;
-	color: #fff;
-	padding-left: 10px;
-	box-sizing: border-box;
-	outline: none;
-	margin-bottom: 3vh;
+	.haveAccount {
+		text-align: center;
+	}
+
+	.checkbox {
+		box-shadow: none;
+		border-color: #bbb;
+		height: 30px;
+		transition: all 0.2s;
+	}
 `;

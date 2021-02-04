@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const SpContainer = styled.div`
+export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: flex-end;
+	justify-content: space-around;
 	font-family: "Open Sans Condensed", sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 0.5rem;
@@ -12,18 +12,22 @@ export const SpContainer = styled.div`
 	width: 100vw;
 	height: 100vh;
 	color: #fff;
-	z-index: 50;
 
-	h1 {
-		margin-bottom: 40vh;
-		font-size: 3em;
+	h2 {
+		margin-top: 2vh;
+		margin-bottom: 5vh;
+		font-size: 1em;
 		border: 1px solid #fff;
-		padding: 0.75rem 2rem;
+		padding: 0.5rem 1.5rem;
+	}
+
+	h3 {
+		font-size: 0.75em;
+		padding-top: 3vh;
 	}
 
 	span {
 		font-size: 1em;
-		margin-top: 2vh;
-		margin-bottom: 10vh;
+		margin-bottom: 30vh;
 	}
 `;
