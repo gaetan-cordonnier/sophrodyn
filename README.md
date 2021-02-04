@@ -8,7 +8,7 @@
 
 ## Front-end Installation:
 
-This App as build with React and modules: /br
+This App as build with React and modules:
 
 - react-router-dom
 - styled-components
