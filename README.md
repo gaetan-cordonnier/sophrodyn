@@ -22,6 +22,7 @@ Use npmi for installation and npm start for start the Application.
 
 - Node JS
 - Express JS
+- Passport for authentication
 - BDD MySQL (Schema on db folder)
 
 Use npmi for installation and npm start for start the server.
