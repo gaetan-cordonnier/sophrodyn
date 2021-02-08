@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api, cookies } from "../../conf";
+
 import Loading from "../../pages/Loading/";
 import { Container, FormContainer } from "./style";
 
@@ -18,8 +20,10 @@ const Login = () => {
 		genre: "",
 		height: "",
 		weight: "",
+		avatar: "",
 	});
 	const dispatch = useDispatch();
+	const history = useHistory();
 
 	useEffect(() => {
 		setTimeout(() => setSpinner(false), 1000);
@@ -31,6 +35,7 @@ const Login = () => {
 		const newValue = type === "checkbox" ? checked : value;
 		newForm[name] = newValue;
 		setForm(newForm);
+		console.log(form);
 	};
 
 	const handleSubmit = (e) => {
@@ -44,11 +49,13 @@ const Login = () => {
 			genre,
 			height,
 			weight,
+			avatar,
 		} = form;
 		let url, formData;
 		if (form.haveAccount) {
 			url = "/auth/signin";
 			formData = { email, password };
+			console.log(form);
 		} else {
 			url = "/signup";
 			formData = {
@@ -60,8 +67,10 @@ const Login = () => {
 				genre,
 				height,
 				weight,
+				avatar,
 			};
 		}
+
 		api
 			.post(url, formData)
 			.then(({ data }) => {
@@ -69,7 +78,8 @@ const Login = () => {
 				cookies.set("token", token);
 				api.defaults.headers.authorization = "Bearer " + token;
 				dispatch({ type: "LOGIN", user });
-				toast(`You're now logged in, ${user.firstname} <3`);
+				toast(`Connecté en tant que ${user.firstname}!`);
+				history.push("/home");
 			})
 			.catch((e) => {
 				toast.error("Aï aïe aïe..." + e);
@@ -106,7 +116,7 @@ const Login = () => {
 								<label htmlFor="passwordBis">Confirmation:</label>
 								<input
 									className="passwordBis"
-									type="passwordBis"
+									type="password"
 									name="passwordBis"
 									minLength="8"
 									required
@@ -115,49 +125,54 @@ const Login = () => {
 								<label htmlFor="firstname">Prénom</label>
 								<input
 									type="text"
-									id="firstname"
 									name="firstname"
 									autocomplete="given-name"
+									required
 									onChange={handleChange}
 								/>
 								<label htmlFor="lastname">Nom</label>
 								<input
 									type="text"
-									id="lastname"
 									name="lastname"
 									autocomplete="family-name"
+									required
 									onChange={handleChange}
 								/>
 								<label htmlFor="birthday">Date de naissance:</label>
 								<input
 									type="date"
 									name="birthday"
-									value="2000-01-01"
 									required
 									onChange={handleChange}
 								/>
 								<label htmlFor="genre">Genre:</label>
-								<select name="genre" required onChange={handleChange}>
+								<select
+									name="genre"
+									autocomplete="sex"
+									required
+									onChange={handleChange}
+								>
 									<option value="">Selectionner</option>
 									<option value="homme">Homme</option>
 									<option value="femme">Femme</option>
 								</select>
 								<label htmlFor="height">Taille (cm):</label>
 								<input
-									type="number"
+									type="size"
 									name="height"
-									placeholder=""
 									minLength="3"
 									maxLength="3"
+									pattern="[1-2][0-9][0-9]"
 									required
 									onChange={handleChange}
 								/>
 								<label htmlFor="weight">Poids (Kg):</label>
 								<input
-									type="number"
+									type="size"
 									name="weight"
+									pattern="[0-9][0-9]"
 									minLength="2"
-									maxLength="2"
+									maxLength="3"
 									required
 									onChange={handleChange}
 								/>

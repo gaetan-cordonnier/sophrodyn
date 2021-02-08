@@ -44,9 +44,22 @@ router.post("/signup", async (req, res) => {
 	}
 });
 
-// Profile
+// GET Profile
 
 router.get("/user/:id", async (req, res) => {
+	try {
+		const [sqlRes] = await db.execute(`SELECT * FROM user WHERE id=?`, [
+			req.params.id,
+		]);
+		res.status(200).json(sqlRes);
+	} catch (e) {
+		res.status(500).json(e);
+	}
+});
+
+// UPDATE Profile
+
+router.post("/user/:id", async (req, res) => {
 	try {
 		const [sqlRes] = await db.execute(`SELECT * FROM user WHERE id=?`, [
 			req.params.id,

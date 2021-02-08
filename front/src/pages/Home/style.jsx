@@ -14,14 +14,14 @@ export const Container = styled.div`
 	color: #fff;
 
 	h1 {
-		margin-bottom: 10vh;
+		margin-bottom: 2vh;
 		font-size: 3em;
 		border: 1px solid #fff;
 		padding: 0.75rem 2rem;
 	}
 
 	h2 {
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 
 	span {
@@ -29,7 +29,7 @@ export const Container = styled.div`
 		margin-bottom: 30vh;
 	}
 
-	li {
+	a {
 		font-size: 1.5em;
 		list-style: none;
 		text-decoration: none;

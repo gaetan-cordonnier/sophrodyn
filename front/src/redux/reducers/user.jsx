@@ -7,6 +7,7 @@ const initialState = {
 	genre: "",
 	height: "",
 	weight: "",
+	avatar: "",
 };
 
 export const user = (state = initialState, action) => {

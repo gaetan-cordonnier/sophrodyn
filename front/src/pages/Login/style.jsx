@@ -79,6 +79,12 @@ export const FormContainer = styled.form`
 		}
 	}
 
+	input {
+		&date::-webkit-clear-button {
+			display: none;
+		}
+	}
+
 	button {
 		font-size: 1.1em;
 		height: 15%;

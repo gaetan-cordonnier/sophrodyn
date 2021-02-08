@@ -15,9 +15,14 @@ router.get("/protected", passport.authenticate("jwt"), (req, res) => {
 
 // Signin
 
-router.post("/signin", passport.authenticate("local"), (req, res) => {
-	const token = jwt.sign(req.user, jwt_secret);
-	res.status(200).json(token);
+router.post("/signin", passport.authenticate("local"), async (req, res) => {
+	try {
+		const token = jwt.sign(req.user, jwt_secret);
+		res.status(200).json({ user: req.user, token });
+	} catch (e) {
+		console.log(e);
+		res.status(500).send("Erreur serveur");
+	}
 });
 
 module.exports = router;

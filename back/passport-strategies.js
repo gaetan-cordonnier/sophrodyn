@@ -16,7 +16,7 @@ passport.use(
 				const [
 					sqlRes,
 				] = await db.query(
-					`SELECT id, email, password, firstname, lastname, birthday, genre, height, weight, picture FROM user WHERE email=?`,
+					`SELECT id, email, password, firstname, lastname, birthday, genre, height, weight, avatar FROM user WHERE email=?`,
 					[formMail]
 				);
 				if (!sqlRes.length) return done(null, false);
