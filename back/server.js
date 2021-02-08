@@ -12,11 +12,11 @@ app.use("/auth", require("./routes/auth"));
 app.use("/", require("./routes/misc"));
 
 app.use((req, res) => {
-	const msg = `Page not found: ${req.url}`;
-	console.warn(msg);
-	res.status(404).send(msg);
+  const msg = `Page not found: ${req.url}`;
+  console.warn(msg);
+  res.status(404).send(msg);
 });
 
 app.listen(port, () => {
-	console.log(`API avalable on http://localhost:${port}`);
+  console.log(`API avalable on http://localhost:${port}`);
 });
